@@ -16,13 +16,21 @@ function callGoogleSignIn(){
       var credential = error.credential;
     });
     firebase.auth().onAuthStateChanged(user => {
-      if(user) {
+    if(user) {
         // After successful login, user will be redirected to home.html.
         window.location = 'home.html'; 
+        console.log('Log-in authentication successful.');
       }
     });
   }
   else{
-    firebase.auth().signOut();
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+      console.log('Sign-out was successful.');
+    }).catch(function(error) {
+      // An error happened.
+      console.log('Sign-out was unsuccessful.');
+    });
+    //console.log('Unsuccessful log-in.');
   }
 }

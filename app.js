@@ -14,9 +14,18 @@ var rootRef = firebase.database().ref().child('students');
 
 $('#saveForm').click(function(){
     console.log("in the funciton");
-    rootRef.push().set({
 
-        firstName:$('#userfName').val(),
-        lastName:$('#userlName').val()
-    });
+    var raceSelected = $('#userRace').val();
+    var genderSelected = $('#gender').val();
+    var programSelected = $('input:radio[name="program"]:checked').val();
+
+        rootRef.push().set({
+
+            firstName:$('#userfName').val(),
+            lastName:$('#userlName').val(),
+            hometown:$('#userHome').val(),
+            race: raceSelected,
+            gender: genderSelected,
+            program: programSelected
+        });
 })

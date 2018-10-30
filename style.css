@@ -59,11 +59,32 @@ header {
 }
 
 #content {
-    width: 100%;
     text-align: center;
     position: relative;
     top: 200px;
     height: 1500px;
     font-family: 'Roboto', sans-serif;
 }
+
+#contentForm {
+    position: relative;
+    top: 150px;
+    height: 1500px;
+}
+
+form {
+    max-width: 100%;
+    top: 160px;
+    left: 15px;
+    position: relative;
+    height: 1500px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+}
+
+fieldset{
+    width: 20%;
+}
+
+
 
