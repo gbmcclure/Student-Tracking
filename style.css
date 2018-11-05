@@ -10,6 +10,20 @@
     border-radius: 6px;
 }
 
+#saveForm {
+    color: #0099CC; 
+    background: transparent;
+    border: 1px solid #0099CC;
+    border-radius: 6px;
+}
+
+#queryForm {
+    color: #0099CC; 
+    background: transparent;
+    border: 1px solid #0099CC;
+    border-radius: 6px;
+}
+
 .nav {
     position: relative;
     float: right;
@@ -72,10 +86,19 @@ header {
     height: 1500px;
 }
 
+#queryContainer{
+    position: relative;
+    top: 160px;
+    font-family: 'Roboto', sans-serif;
+    height: 1500px;
+    border: none;
+    text-align: center;
+}
+
 form {
     max-width: 100%;
     top: 160px;
-    left: 15px;
+    left: 100px;
     position: relative;
     height: 1500px;
     font-family: 'Roboto', sans-serif;
@@ -86,5 +109,22 @@ fieldset{
     width: 20%;
 }
 
+table{
+  table-layout: fixed;
+  border: 2px dotted purple;
+  margin: 0 auto;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #C1D9F4;
+}
+  
+tbody tr:nth-child(even) {
+    background-color: #71A5D7;
+}
+
+th, td {
+    padding: 10px;
+}
 
 

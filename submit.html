@@ -16,14 +16,15 @@
                     <ul>
                         <li><a href="home.html">Home</a></li>
                         <li><a href="submit.html">Submit</a></li>
-                        <li><a href="query.asp">Query</a></li>
+                        <li><a href="query.html">Query</a></li>
+                        <li><a href="visual.html">Visual</a></li>
                     </ul>
                 </div>
             </header>
                     <form id="newUserForm">
-                        <h3>Complete the following form to add your student information
+                        <h2 class="animated fadeIn slow">Complete the following form to add your student information
                             to the database.
-                        </h3><br>
+                        </h2><br>
                         <label for="Field1">First Name:</label><br>
                         <input id="userfName" name="Field1" type="text" value=""><br><br>
 
@@ -45,11 +46,11 @@
 
                         <label for="genderField">What is your gender identity?</label><br>
                         <select id="gender" name="gender">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="nonbinary">Non-Binary</option>
-                        <option value="other">Other</option>
-                        <option value="dontSay">Prefer not to say</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Nonbinary">Non-Binary</option>
+                        <option value="Other">Other</option>
+                        <option value="Didn't Say">Prefer not to say</option>
                         </select><br><br>
 
                         <fieldset>
@@ -75,12 +76,12 @@
 
                         <label for="Field4">In total, how many years did it take to complete your degree?</label><br>
                         <select id="timeToComplete" name="timeToComplete">
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                        <option value="five">5</option>
-                        <option value="six">6</option>
-                        <option value="moreThanSix">More than 6</option>
+                        <option value="2 years">2</option>
+                        <option value="3 years">3</option>
+                        <option value="4 years">4</option>
+                        <option value="5 years">5</option>
+                        <option value="6 years">6</option>
+                        <option value="More than 6 years">More than 6</option>
                         </select><br><br>
 
                         <fieldset>
@@ -90,7 +91,7 @@
                             <option value="Masters">Graduate school (Masters)</option>
                             <option value="PhD">Graduate school (PhD)</option>
                             <option value="Academic">An academic position</option>
-                            <option value="Second degree">Second degree in a different field</option>
+                            <option value="Second degree in a different field">Second degree in a different field</option>
                             <option value="Medical or Pharmacy">Medical school or Pharmacy school</option>
                             <option value="Law school">Law school</option>
                             <option value="MBA">MBA</option>
@@ -99,7 +100,7 @@
                             </select><br><br>
 
                             <label for="textField"><small>If needed, please elaborate:</small></label><br>
-                            <textarea id="textArea" name="advanced" rows="3" cols="33" maxlength="200" wrap="hard"></textarea>
+                            <textarea id="elaborate" name="advanced" rows="3" cols="33" maxlength="200" wrap="hard"></textarea>
 
                         </fieldset><br>
 
