@@ -5,7 +5,15 @@
         <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
         <link rel="stylesheet" href="animate.css">
         <link href="https://fonts.googleapis.com/css?family=Cormorant|Roboto:100" rel="stylesheet">
-       <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript">
+            function logOut() {
+                firebase.auth().signOut();
+                console.log("Successfully logged out.");
+                alert("Successfully logged out.");
+                window.location = 'index.html'; 
+            }
+        </script>
     </head>
     <body>
     <div id="container">
@@ -18,6 +26,7 @@
                         <li><a href="submit.html">Submit</a></li>
                         <li><a href="query.html">Query</a></li>
                         <li><a href="visual.html">Visual</a></li>
+                        <li><a href="javascript:logOut()" style="color:blue;">Logout</a></li>
                     </ul>
                 </div>
             </header>
@@ -25,43 +34,41 @@
 
     <div id="queryContainer">
         <h2 class="animated fadeIn slow">How would you like to query your students?</h2>
-        <select id="queryselector">
+        <select style="font-size:15px;" id="queryselector">
             <option value=""></option>
-            <option value="qfirstName">By First Name</option>
             <option value="qlastName">By Last Name</option>
             <option value="qHometown">By Hometown</option>
             <option value="qRace">By Ethnicity</option>
             <option value="qGender">By Gender</option>
             <option value="qProgram">By Program</option>
+            <option value="qSchool">By School</option>
+            <option value="qConcentration">By Study</option>
             <option value="qGradYear">By Graduation Year</option>
             <option value="qTimeComplete">By Time to Completion</option>
             <option value="qPostGrad">By Post-Grad Plans</option>
          </select><br><br>
 
-         <div id="qfirstName" class="querychoice" style="display:none">
-            <label for="Field1">First Name:</label><br>
-            <input id="userfName" name="Field1" type="text" value=""><br><br>
-            <input id="queryfirstName" name="queryfirstName" type="submit" value="Query Data">
-        </div>
-
         <div id="qlastName" class="querychoice" style="display:none">
-            <label for="Field1">Last Name:</label><br>
+            <h3>Fill in the field or select the desired information to query:</h3>
+            <label for="Field1"><strong>Last Name:</strong></label><br>
             <input id="userlName" name="Field1" type="text" value=""><br><br>
             <input id="querylastName" name="querylastName" type="submit" value="Query Data">
         </div>
 
         <div id="qHometown" class="querychoice" style="display:none">
-            <label for="Field1">Hometown:</label><br>
+            <h3>Fill in the field or select the desired information to query:</h3>
+            <label for="Field1"><strong>Hometown:</strong></label><br>
             <input id="userHometown" name="Field1" type="text" value=""><br><br>
             <input id="queryHometown" name="queryHometown" type="submit" value="Query Data">
         </div>
 
         <div id="qRace" class="querychoice" style="display:none">
-            <label for="raceField">What is your ethnicity?</label><br>
-                        <select id="userRace" name="race">
+            <h3>Fill in the field or select the desired information to query:</h3>
+            <label for="raceField"><strong>Ethnicity:</strong></label><br>
+                        <select style="font-size:15px;" id="userRace" name="race">
                         <option value="American Indian or Alaska Native">American Indian or Alaska Native</option>
                         <option value="Asian">Asian</option>
-                        <option value="Black or African America">Black or African America</option>
+                        <option value="Black or African American">Black or African America</option>
                         <option value="Hispanic or Latino">Hispanic or Latino</option>
                         <option value="Native Hawaiian or Other Pacific Islander">Native Hawaiian or Other Pacific Islander</option>
                         <option value="White">White</option>
@@ -70,8 +77,9 @@
         </div>
 
         <div id="qGender" class="querychoice" style="display:none">
-            <label for="genderField">What is your gender identity?</label><br>
-                        <select id="gender" name="gender">
+            <h3>Fill in the field or select the desired information to query:</h3>
+            <label for="genderField"><strong>Gender identity:</strong></label><br>
+                        <select style="font-size:15px;" id="gender" name="gender">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Nonbinary">Non-Binary</option>
@@ -82,19 +90,20 @@
         </div>
 
         <div id="qProgram" class="querychoice" style="display:none">
+            <h3>Fill in the field or select the desired information to query:</h3>
             <fieldset style = "width: 200px; margin: 0px auto;">
-                <legend>Program</legend>
+                <legend><strong>Program:</strong></legend>
                 <ul style="list-style: none;"> 
                     <li>
                       <label for="title_1">
                         <input type="radio" name="program" value="Undergraduate" >
-                        Undergraduate
+                        <strong>Undergraduate</strong>
                       </label>
                     </li>
                     <li>
                       <label for="title_2">
                         <input type="radio" name="program" value="Graduate">
-                        Graduate
+                        <strong>Graduate</strong>
                       </label>
                     </li>
                 </ul>
@@ -102,15 +111,45 @@
         <input id="queryProgram" name="queryProgram" type="submit" value="Query Data">
         </div>
 
+        <div id="qSchool" class="querychoice" style="display:none">
+            <h3>Fill in the field or select the desired information to query:</h3>
+            <label for="FieldSchool"><strong>From which school will the student(s) receive your degree?</strong></label><br>
+                        <select style="font-size:15px;" id="school" name="school">
+                        <option value="College of Liberal Arts">College of Liberal Arts</option>
+                        <option value="Graduate School">Graduate School</option>
+                        <option value="Meek School of Journalism & New Media">Meek School of Journalism & New Media</option>
+                        <option value="Patterson School of Accountancy">Patterson School of Accountancy</option>
+                        <option value="School of Applied Science">School of Applied Science</option>
+                        <option value="School of Business Administration">School of Business Administration</option>
+                        <option value="School of Education">School of Education</option>
+                        <option value="School of Engineering">School of Engineering</option>
+                        <option value="School of Law">School of Law</option>
+                        <option value="School of Pharmacy">School of Pharmacy</option>
+                        </select><br><br>
+                        <input id="querySchool" name="querySchool" type="submit" value="Query Data">
+        </div>
+
+        <div id="qConcentration" class="querychoice" style="display:none">
+            <h3>Fill in the field or select the desired information to query:</h3>
+            <label for="FieldMajMin"><strong>How did the student(s) study English?</strong></label><br>
+                        <select style="font-size:15px;" id="majorMinor" name="majorMinor">
+                        <option value="As a major concentration">As a major concentration</option>
+                        <option value="As a minor concentration">As a minor concentration</option>
+                        </select><br><br>
+                        <input id="queryConcentration" name="queryConcentration" type="submit" value="Query Data">
+        </div>
+
         <div id="qGradYear" class="querychoice" style="display:none">
-            <label for="Field3">Graduation Year (XXXX):</label><br>
+            <h3>Fill in the field or select the desired information to query:</h3>
+            <label for="Field3"><strong>Graduation Year (XXXX):</strong></label><br>
             <input id="gradDate" name="Field3" type="text" value=""><br><br>
             <input id="queryGradYear" name="queryGradYear" type="submit" value="Query Data">
         </div>
 
         <div id="qTimeComplete" class="querychoice" style="display:none">
-            <label for="Field4">In total, how many years did it take to complete your degree?</label><br>
-                        <select id="timeToComplete" name="timeToComplete">
+            <h3>Fill in the field or select the desired information to query:</h3>
+            <label for="Field4"><strong>In total, how many years did it take the student(s) to complete the degree?</strong></label><br>
+                        <select style="font-size:15px;" id="timeToComplete" name="timeToComplete">
                         <option value="2 years">2</option>
                         <option value="3 years">3</option>
                         <option value="4 years">4</option>
@@ -121,11 +160,12 @@
                         <input id="queryTimeComplete" name="queryTimeComplete" type="submit" value="Query Data">
         </div>
 
-        <div id="qPostGrad" name="querychoice" style="display:none">
+        <div id="qPostGrad" class="querychoice" style="display:none">
+            <h3>Fill in the field or select the desired information to query:</h3>
             <fieldset style = "width: 200px; margin: 0px auto;">
-                <legend>After Graduation</legend>
-                <label for="Fieldgrad"><small>What are your expected plans after graduation?</small></label><br>
-                <select id="afterGrad" name="afterGrad">
+                <legend><strong>After Graduation</strong></legend>
+                <label for="Fieldgrad"><small><strong>What are the expected plans after graduation?</strong></small></label><br>
+                <select style="font-size:15px;" id="afterGrad" name="afterGrad">
                 <option value="Masters">Graduate school (Masters)</option>
                 <option value="PhD">Graduate school (PhD)</option>
                 <option value="Academic">An academic position</option>
@@ -134,15 +174,15 @@
                 <option value="Law school">Law school</option>
                 <option value="MBA">MBA</option>
                 <option value="Work">Applying for jobs</option>
-                <option value="Other">Other</option>
+                <option value="Other job">Other</option>
                 </select><br><br>
                 <input id="queryPostGrad" name="queryPostGrad" type="submit" value="Query Data">
 
             </fieldset><br>
         </div>
 
-        <div class="queryTable">
-                <h1>Query Results</h1>
+        <div id="queryselector" class="queryTable" style="display:none">
+                <h1>Query Results will appear in the table below:</h1>
                 <table>
                     <tr>
                         <td><strong>First Name</strong></td>
@@ -151,6 +191,8 @@
                         <td><strong>Ethnicity</strong></td>
                         <td><strong>Gender</strong></td>
                         <td><strong>Program</strong></td>
+                        <td><strong>School</strong></td>
+                        <td><strong>Study</strong></td>
                         <td><strong>Graduation Year</strong></td>
                         <td><strong>Time to Complete</strong></td>
                         <td><strong>After Graduation</strong></td>
@@ -158,8 +200,9 @@
                     </tr>
                     <tbody id ="table_body">
                     </tbody>
-                </table>
-            </div>
+                </table><br>
+                <input type="button" class="refreshButton" value="Start New Query" onClick=newQueryPage()>
+            </div><br><br>
     </div>
  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

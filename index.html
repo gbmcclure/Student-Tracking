@@ -15,7 +15,6 @@
             firebase.initializeApp(config);
         </script>
         <title>Department of English | Student Tracking Database</title>
-        <script src="authentication.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Cormorant|Roboto:100" rel="stylesheet">
         <link rel="stylesheet" href="animate.css">
         <link href="style.css" rel="stylesheet" type="text/css" />
@@ -28,9 +27,17 @@
             </header>
             <div id="content">
                 <h1 class="animated fadeIn slow">Welcome to the database.</h2>
-                <h2 class="animated fadeIn slow">Let's get started.</h1>
-                <input type="button" class="google" onclick=callGoogleSignIn() value="Google Sign In"/>
+                <h2 class="animated fadeIn slow">Let's get started.</h1><br>
+                <h3>Enter your e-mail and password below to sign in:</h3>
+                <p class="username">Email</p>
+                <input type="text" id="username" name="username" size="30"><br>
+                <p class="password"> Password</p>
+                <input type="password" id="password" name="password" size="30"><br><br>
+                <input type="submit" name="signIn" id="signInButton" value="Sign in">
+
             </div>
         </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="authentication.js"></script>
     </body>
 </html>

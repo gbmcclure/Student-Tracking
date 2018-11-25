@@ -5,7 +5,16 @@
         <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
         <link rel="stylesheet" href="animate.css">
         <link href="https://fonts.googleapis.com/css?family=Cormorant|Roboto:100" rel="stylesheet">
-       <link href="style.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript">
+            function logOut() {
+                firebase.auth().signOut();
+                console.log("Successfully logged out.");
+                alert("Successfully logged out.");
+                window.location = 'index.html'; 
+            }
+        </script>
     </head>
     <body>
     <div id="container"></div>
@@ -18,16 +27,60 @@
                         <li><a href="submit.html">Submit</a></li>
                         <li><a href="query.html">Query</a></li>
                         <li><a href="visual.html">Visual</a></li>
+                        <li><a href="javascript:logOut()" style="color:blue;">Logout</a></li>
                     </ul>
                 </div>
             </header>
     </div>
-
     <div class="chart-container">
             <h2 class="animated fadeIn slow">Let's visualize our data.</h2>
-            <h3>Scroll down the page for more options.</h3><br>
-            <canvas id="myChart" width="100" height="100"></canvas><br><br><br>
-            <canvas id="secondChart" width="100" height="100"></canvas>
+            <h3>Choose options from the drop-down menus. Scroll down the page for more options.</h3><br><br>
+            <h3 style="color:palevioletred;">Visualize with Bar Graphs</h3>
+            <select id="chartType" style="font-size:15px;">
+                <option value=""></option>
+                <option value="myChart">Total Students (by Ethnicity)</option>
+                <option value="myChart2">Total Students (by Program)</option>
+                <option value="myChart3">Total Students (by Completion Time)</option>
+                <option value="myChart4">Total Students (by Gender)</option>
+                <option value="myChart5">Total Students (by Graduation Year)</option>
+                <option value="myChart11">Total Students (by School)</option>
+                <option value="myChart12">Total Students (by Study)</option>
+                <option value="myChart15">Total Students (by Post-Grad Plans)</option>
+            </select>
+            <h3 style="color:teal;">Visualize with Pie Charts</h3>
+            <select id="pieType" style="font-size:15px;">
+                <option value=""></option>
+                <option value="myChart6">Total Students (by Gender)</option>
+                <option value="myChart7">Total Students (by Ethnicity)</option>
+                <option value="myChart8">Total Students (by Program)</option>
+                <option value="myChart9">Total Students (by Completion Time)</option>
+                <option value="myChart10">Total Students (by Graduation Year)</option>
+                <option value="myChart13">Total Students (by School)</option>
+                <option value="myChart14">Total Students (by Study)</option>
+                <option value="myChart16">Total Students (by Post-Grad Plans)</option>
+            </select><br><br>
+            <canvas id="myChart" class="chartChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart2" class="chartChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart3" class="chartChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart4" class="chartChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart5" class="chartChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart11" class="chartChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart12" class="chartChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart15" class="chartChoice" width="300" height="300" style="display:none"></canvas>
+
+
+
+            <canvas id="myChart6" class="pieChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart7" class="pieChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart8" class="pieChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart9" class="pieChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart10" class="pieChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart13" class="pieChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart14" class="pieChoice" width="300" height="300" style="display:none"></canvas>
+            <canvas id="myChart16" class="pieChoice" width="300" height="300" style="display:none"></canvas>
+            <br><br>
+            <h2>Where do your students come from?</h2>
+            <div id="myDiv"></div>
     </div>
  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

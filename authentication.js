@@ -1,3 +1,4 @@
+// Google log-in authentication function.
 function callGoogleSignIn(){
   if(!firebase.auth().currentUser){
     var provider = new firebase.auth.GoogleAuthProvider();
@@ -34,3 +35,26 @@ function callGoogleSignIn(){
     //console.log('Unsuccessful log-in.');
   }
 }
+
+// Firebase e-mail/password authentication
+$('#signInButton').click(function(){
+  var username = $('#username').val();
+  var password = $('#password').val();
+  firebase.auth().signInWithEmailAndPassword(username, password)
+  .then( data => {
+    alert('Success! You\'re logged in!');
+    window.location = 'home.html';
+    // user is logged in
+  })
+  .catch( function(error){
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  if(errorCode == 'auth/user-not-found'){
+    alert('User not found. Please register your account in Firebase.');
+  }
+  else{
+    alert(errorMessage);
+  }
+  })
+  console.log('Would sign in with info: ', username, password);
+})

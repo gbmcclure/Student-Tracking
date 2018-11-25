@@ -10,11 +10,24 @@
     border-radius: 6px;
 }
 
+#signInButton {
+    color: #0099CC; 
+    background: transparent;
+    border: 1px solid #0099CC;
+    border-radius: 6px;
+    width: 10em;
+    height: 2em;
+    font-size : 20px;
+}
+
 #saveForm {
     color: #0099CC; 
     background: transparent;
     border: 1px solid #0099CC;
     border-radius: 6px;
+    width: 130px;
+    height: 30px;
+    font-size: 15px;
 }
 
 #queryForm {
@@ -66,10 +79,12 @@ h1.englogo {
 header {
     height: 100px;
     width: 100%;
+    top: 0px;
     z-index: 10;
     position: fixed;
     border-bottom: solid thin;
     background-color: white;
+    font-weight: bold;
 }
 
 #content {
@@ -78,6 +93,9 @@ header {
     top: 200px;
     height: 1500px;
     font-family: 'Roboto', sans-serif;
+    font-size: 130%;
+    color: #36213E;
+    font-weight: bold;
 }
 
 #contentForm {
@@ -101,8 +119,10 @@ form {
     left: 100px;
     position: relative;
     height: 1500px;
+    font-size: 120%;
     font-family: 'Roboto', sans-serif;
     border: none;
+    font-weight: bold;
 }
 
 fieldset{
@@ -127,4 +147,49 @@ th, td {
     padding: 10px;
 }
 
+.chart-container{
+    position: relative; 
+    margin: 0 auto;
+    top: 160px; 
+    height:800px; 
+    width:800px;
+    text-align: center;
+}
 
+.chart-container h2{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.chart-container h3{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.refreshButton{
+    color: #0099CC; 
+    background: transparent;
+    border: 1px solid #0099CC;
+    border-radius: 6px;
+    width: 130px;
+    height: 30px;
+    font-size: 15px;
+}
+
+.queryTable{
+    font-weight: bold;
+}
+
+#username{
+    border-radius: 50px;
+    width: 20em;
+    height: 2em;
+    border: 1px solid;
+}
+
+#password{
+    border-radius: 50px;
+    width: 20em;
+    height: 2em;
+    border: 1px solid;
+}
